@@ -1,0 +1,36 @@
+body {
+    background: #34e89e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f3443, #34e89e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f3443, #34e89e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+}
+
+#display-numero {
+    border: 1px solid rgb(255, 255, 255);
+    width: 120px;
+    height: 71px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+
+
+h1 {
+    color: white;
+}
+
+
+p {
+    color: #fff;
+}

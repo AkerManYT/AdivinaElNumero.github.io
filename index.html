@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Adivina el numero</title>
+</head>
+
+<body>
+    <h1>Adivina el numero</h1>
+    <p>para jugar debes elegir un numero del 1 al 10 y tienes que acertar</p>
+    <div id="display-numero">?</div>
+    <br />
+    <div id="display-resultado" style="height: 50px;"></div>
+    <br />
+
+    <input type="text" name="" id="text1">
+    <button onclick="playGame()">Jugar</button>
+    <button onclick="resetGame()">Reiniciar</button>
+
+    <script>
+        let NUMERO1 = Math.floor(Math.random() * 10 + 1);
+        let userInput = 0;
+        let intentos = 0;
+        let salida = "Hola Mundo"
+
+        function playGame() {
+            userInput = parseInt(document.getElementById("text1").value);
+
+            if (userInput !== NUMERO1) {
+                salida = `${userInput}. no as elegido el numero correcto`;
+                intentos++;
+            }
+
+            if (userInput == NUMERO1) {
+                salida = `${userInput} has adivinado el numero`;
+                document.getElementById("display-numero").innerHTML = NUMERO1;
+            }
+
+            document.getElementById("display-resultado").innerHTML = `${salida}. Este es tu intento numero ${intentos}.`
+            document.getElementById("text1").select();
+        }
+
+        function resetGame() {
+            NUMERO1 = Math.floor(Math.random() * 10 + 1);
+            document.getElementById("display-numero").innerHTML = "?";
+            document.getElementById("display-resultado").innerHTML = "A jugar!";
+            document.getElementById("text1").value = ""
+            document.getElementById("text1").focus();
+        }
+    </script>
+</body>
+
+</html>
